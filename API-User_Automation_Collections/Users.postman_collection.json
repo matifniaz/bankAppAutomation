@@ -1,0 +1,289 @@
+{
+	"info": {
+		"_postman_id": "d4578203-14be-4dbf-91c6-c647bede5ddc",
+		"name": "Users",
+		"description": "The User APIs has just been updated. Please perform the following test flow on the following\nendpoints. (https://petstore3.swagger.io/#/user)\nPerform the following flows:\n- Create a new user\n- Read the created user\n- Update the user’s username\n- Read the updated user\n- Delete the user\n- Verify the user is deleted",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3750536"
+	},
+	"item": [
+		{
+			"name": "Create New User",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.collectionVariables.set(\"U_id\", pm.variables.replaceIn('{{$randomInt}}')+pm.variables.replaceIn('{{$randomInt}}'));\r",
+							"pm.collectionVariables.set(\"U_username\", pm.variables.replaceIn('{{$randomUserName}}'));\r",
+							"pm.collectionVariables.set(\"U_firstName\",  pm.variables.replaceIn('{{$randomFirstName}}'));\r",
+							"pm.collectionVariables.set(\"U_lastName\",  pm.variables.replaceIn('{{$randomLastName}}'));\r",
+							"pm.collectionVariables.set(\"U_email\", pm.variables.replaceIn('{{$randomExampleEmail}}'));\r",
+							"pm.collectionVariables.set(\"U_password\", pm.variables.replaceIn('{{$randomPassword}}'));\r",
+							"pm.collectionVariables.set(\"U_phone\", pm.variables.replaceIn('{{$randomPhoneNumber}}'));\r",
+							"pm.collectionVariables.set(\"U_userStatus\", 1);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": {{U_id}},\r\n  \"username\": \"{{U_username}}\",\r\n  \"firstName\": \"{{U_firstName}}\",\r\n  \"lastName\": \"{{U_lastName}}\",\r\n  \"email\": \"{{U_email}}\",\r\n  \"password\": \"{{U_password}}\",\r\n  \"phone\": \"{{U_phone}}\",\r\n  \"userStatus\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URI}}/user",
+					"host": [
+						"{{URI}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get New User",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URI}}/user/{{U_username}}",
+					"host": [
+						"{{URI}}"
+					],
+					"path": [
+						"user",
+						"{{U_username}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update New User",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.collectionVariables.set(\"U_id\", pm.variables.replaceIn('{{$randomInt}}')+pm.variables.replaceIn('{{$randomInt}}'));\r",
+							"pm.collectionVariables.set(\"U_username_up\", pm.variables.replaceIn('{{$randomUserName}}'));\r",
+							"pm.collectionVariables.set(\"U_firstName\",  pm.variables.replaceIn('{{$randomFirstName}}'));\r",
+							"pm.collectionVariables.set(\"U_lastName\",  pm.variables.replaceIn('{{$randomLastName}}'));\r",
+							"pm.collectionVariables.set(\"U_email\", pm.variables.replaceIn('{{$randomExampleEmail}}'));\r",
+							"pm.collectionVariables.set(\"U_password\", pm.variables.replaceIn('{{$randomPassword}}'));\r",
+							"pm.collectionVariables.set(\"U_phone\", pm.variables.replaceIn('{{$randomPhoneNumber}}'));\r",
+							"pm.collectionVariables.set(\"U_userStatus\", 1);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": {{U_id}},\r\n  \"username\": \"{{U_username_up}}\",\r\n  \"firstName\": \"{{U_firstName}}\",\r\n  \"lastName\": \"{{U_lastName}}\",\r\n  \"email\": \"{{U_email}}\",\r\n  \"password\": \"{{U_password}}\",\r\n  \"phone\": \"{{U_phone}}\",\r\n  \"userStatus\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URI}}/user/{{U_username}}",
+					"host": [
+						"{{URI}}"
+					],
+					"path": [
+						"user",
+						"{{U_username}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Updated User",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URI}}/user/{{U_username_up}}",
+					"host": [
+						"{{URI}}"
+					],
+					"path": [
+						"user",
+						"{{U_username_up}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Updated User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URI}}/user/{{U_username_up}}",
+					"host": [
+						"{{URI}}"
+					],
+					"path": [
+						"user",
+						"{{U_username_up}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Deleted User",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URI}}/user/{{U_username_up}}",
+					"host": [
+						"{{URI}}"
+					],
+					"path": [
+						"user",
+						"{{U_username_up}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.collectionVariables.set(\"URI\", \"https://petstore3.swagger.io/api/v3\");",
+					"",
+					"",
+					"",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URI",
+			"value": "https://petstore3.swagger.io/api/v3"
+		},
+		{
+			"key": "variable_key",
+			"value": ""
+		},
+		{
+			"key": "U_id",
+			"value": ""
+		},
+		{
+			"key": "U_username",
+			"value": ""
+		},
+		{
+			"key": "U_firstName",
+			"value": ""
+		},
+		{
+			"key": "U_lastName",
+			"value": ""
+		},
+		{
+			"key": "U_email",
+			"value": ""
+		},
+		{
+			"key": "U_password",
+			"value": ""
+		},
+		{
+			"key": "U_phone",
+			"value": ""
+		},
+		{
+			"key": "U_userStatus",
+			"value": ""
+		},
+		{
+			"key": "U_username_up",
+			"value": ""
+		}
+	]
+}
