@@ -38,3 +38,4 @@ npm run cypress:execution
 ## HTML Report:
 HTML report open automatically after completeion of test executions.
 Report path "cypress\reports\html\index.html"
+![image](https://user-images.githubusercontent.com/40147842/230332508-0c4215fc-4267-442d-b35a-f7aafc6ae1f1.png)
