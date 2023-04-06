@@ -1,0 +1,21 @@
+{
+  "name": "inscale",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cypress:execution": "cypress run --spec 'cypress/e2e/00-UI-TestCasse/spec_runner.cy.js'",
+    "cypress:execution:Chrome": "cypress run --spec 'cypress/e2e/00-UI-TestCasse/spec_runner.cy.js' --browser chrome",
+    "cypress:execution:firefox": "cypress run --spec 'cypress/e2e/00-UI-TestCasse/spec_runner.cy.js' --browser firefox"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cypress/xpath": "^2.0.3",
+    "cypress": "^12.9.0",
+    "cypress-mochawesome-reporter": "^3.3.0",
+    "cypress-plugin-api": "^2.11.0",
+    "xlsx": "^0.18.5"
+  }
+}
