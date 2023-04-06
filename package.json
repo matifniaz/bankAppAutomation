@@ -1,5 +1,5 @@
 {
-  "name": "inscale",
+  "name": "automation_cypress_ui",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "cypress:execution:firefox": "cypress run --spec 'cypress/e2e/00-UI-TestCasse/spec_runner.cy.js' --browser firefox"
   },
   "keywords": [],
-  "author": "",
+  "author": "MAN - Muhammad Atif Niaz",
   "license": "ISC",
   "devDependencies": {
     "@cypress/xpath": "^2.0.3",
