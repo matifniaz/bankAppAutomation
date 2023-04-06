@@ -36,11 +36,11 @@ Execution on Firefox
 npm run cypress:execution
 ```
 ## HTML Report:
-HTML report open automatically after completeion of test executions.
-Report path "cypress\reports\html\index.html"
+- [X] HTML report open automatically after completeion of test executions.
+- [X] Report path "cypress\reports\html\index.html"
 ![image](https://user-images.githubusercontent.com/40147842/230332508-0c4215fc-4267-442d-b35a-f7aafc6ae1f1.png)
 ## API Automation Using Postman
 ![image](https://user-images.githubusercontent.com/40147842/230336414-84690d88-0e29-473f-85a5-ab6242d2841b.png)
-Collection Added Under "API-User_Automation_Collections" on root dirctory
+- [X] Collection Added Under "API-User_Automation_Collections" on root dirctory
 ![image](https://user-images.githubusercontent.com/40147842/230336101-61e0eab0-4587-4a68-897d-db3061614e39.png)
 
